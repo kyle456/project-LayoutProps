@@ -13,7 +13,13 @@ const App = () => {
 
       <ScrollView>
         <View>
-          <Button title="1"/>
+          <Button title="CHANGE FLEX DIRECTION"/>
+          <Button title="CHANGE JUSTIFY CONTENT"/>
+          <Button title="CHANGE ALIGN ITEMS"/>
+          <Button title="CHANGE DIRECTION"/>
+          <Button title="CHANGE FLEX WRAP"/>
+          <Button title="ADD SQUARE"/>
+          <Button title="DELETE SQUARE"/>
         </View>
 
       </ScrollView>
