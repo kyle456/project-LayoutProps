@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { View, StyleSheet, ScrollView, Button } from 'react-native';
 import Constants from 'expo-constants';
 
 
@@ -12,6 +12,9 @@ const App = () => {
       </View>
 
       <ScrollView>
+        <View>
+          <Button title="1"/>
+        </View>
 
       </ScrollView>
     </>
