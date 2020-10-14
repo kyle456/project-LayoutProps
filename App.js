@@ -34,6 +34,9 @@ const App = () => {
   const hookedStyles = {
     flexDirection: flexDirections[flexDirection],
     justifyContent: justifyContents[justifyContent],
+    alignItems: alignItemsArr[alignItems],
+    direction: directions[direction],
+    flexWrap: wraps[wrap],
   };
 
   //set the next value
@@ -119,7 +122,7 @@ const App = () => {
           <View style={styles.buttonView}>
             <Button title="DELETE SQUARE" 
               onPress={() => {
-                
+
               }}
             />
           </View>
