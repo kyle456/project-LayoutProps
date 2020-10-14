@@ -30,6 +30,17 @@ const App = () => {
   const [direction, setDirection] = useState(0);
   const [wrap, setWrap] = useState(0);
 
+  //create new square
+  const Square = () => {
+    const sqStyle = {
+      width: 50,
+      height: 50,
+      backgroundColor: randomHexColor(),
+    };
+    return <View style={sqStyle} />;
+  }
+
+
   return (
     <>
       <View style={{ paddingTop: Constants.statusBarHeight }} />
@@ -106,5 +117,12 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 })
+
+//make a color randomly
+const randomHexColor = () => { 
+  return '#000000'.replace(/0/g, () => {
+    return (~~(Math.random())*16).toString(16);
+  });
+}
 
 export default App;
