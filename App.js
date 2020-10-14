@@ -30,6 +30,22 @@ const App = () => {
   const [direction, setDirection] = useState(0);
   const [wrap, setWrap] = useState(0);
 
+  //apply changes to main view
+  const hookedStyles = {
+    flexDirection: flexDirections[flexDirection],
+    justifyContent: justifyContents[justifyContent],
+  };
+
+  //set the next value
+  const changeSetting = (value, options, setfunction) => {
+    if (value == options.length - 1) {
+      //end of array
+      setfunction(0)
+    } else {
+      setfunction(value + 1)
+    }
+  }
+
   //create new square
   const Square = () => {
     const sqStyle = {
@@ -46,51 +62,65 @@ const App = () => {
   return (
     <>
       <View style={{ paddingTop: Constants.statusBarHeight }} />
-      <View style={[styles.container, styles.playingSpace]}>
-        {squares.map(elem => elem)}
+      <View style={[styles.container, styles.playingSpace, hookedStyles]}>
+      {squares.map(elem => elem)}
       </View>
 
       <ScrollView style={styles.container}>
-        <View style={styles.controlSpace}>          
+        <View style={styles.controlSpace}>
           <View style={styles.buttonView}>
             <Button title="CHANGE FLEX DIRECTION" 
-              onPress={() => console.log("press 1")}
+              onPress={() => {
+                changeSetting(flexDirection, flexDirections, setFlexDirection)
+              }}
             />
           </View>
 
           <View style={styles.buttonView}>
             <Button title="CHANGE JUSTIFY CONTENT" 
-              onPress={() => console.log("press 2")}
+              onPress={() => {
+                changeSetting(justifyContent, justifyContents, setJustifyContent)
+              }}
             />
           </View>
 
           <View style={styles.buttonView}>
             <Button title="CHANGE ALIGN ITEMS" 
-              onPress={() => console.log("press 3")}
+              onPress={() => {
+                changeSetting(alignItems, alignItemsArr, setAlignItems)
+              }}
             />
           </View>
 
           <View style={styles.buttonView}>
             <Button title="CHANGE DIRECTION" 
-              onPress={() => console.log("press 4")}
+              onPress={() => {
+                changeSetting(direction, directions, setDirection)
+              }}
             />
           </View>
 
           <View style={styles.buttonView}>
             <Button title="CHANGE FLEX WRAP" 
-              onPress={() => console.log("press 5")}
+              onPress={() => {
+                changeSetting(wrap, wraps, setWrap)
+              }}
             />
           </View>
 
           <View style={styles.buttonView}>
             <Button title="ADD SQUARE" 
-              onPress={() => console.log("press 6")}
+              onPress={() => {
+
+              }}
             />
           </View>
 
           <View style={styles.buttonView}>
             <Button title="DELETE SQUARE" 
-              onPress={() => console.log("press 7")}
+              onPress={() => {
+                
+              }}
             />
           </View>
         </View>
@@ -118,7 +148,7 @@ const styles = StyleSheet.create({
     width: '50%',
     padding: 10,
   },
-})
+});
 
 //make a color randomly
 const randomHexColor = () => {
