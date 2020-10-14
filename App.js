@@ -40,12 +40,14 @@ const App = () => {
     return <View style={sqStyle} />;
   }
 
+  const [squares, setSqaures] = useState([Square(), Square(), Square()]);
+
 
   return (
     <>
       <View style={{ paddingTop: Constants.statusBarHeight }} />
       <View style={[styles.container, styles.playingSpace]}>
-        
+        {squares.map(elem => elem)}
       </View>
 
       <ScrollView style={styles.container}>
@@ -119,10 +121,10 @@ const styles = StyleSheet.create({
 })
 
 //make a color randomly
-const randomHexColor = () => { 
+const randomHexColor = () => {
   return '#000000'.replace(/0/g, () => {
-    return (~~(Math.random())*16).toString(16);
+    return (~~(Math.random() * 16)).toString(16);
   });
-}
+};
 
 export default App;
