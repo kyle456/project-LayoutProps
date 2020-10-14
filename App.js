@@ -30,14 +30,6 @@ const App = () => {
   const [direction, setDirection] = useState(0);
   const [wrap, setWrap] = useState(0);
 
-  const Square = () => {
-    const sqStyle = {
-      width: 50,
-      height: 50,
-    };
-    return <View style={sqStyle}/>;
-  }
-
   return (
     <>
       <View style={{ paddingTop: Constants.statusBarHeight }} />
