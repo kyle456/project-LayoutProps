@@ -59,7 +59,7 @@ const App = () => {
     return <View style={sqStyle} />;
   }
 
-  const [squares, setSqaures] = useState([Square(), Square(), Square()]);
+  const [squares, setSquares] = useState([Square(), Square(), Square()]);
 
 
   return (
@@ -114,7 +114,8 @@ const App = () => {
           <View style={styles.buttonView}>
             <Button title="ADD SQUARE" 
               onPress={() => {
-
+                // ...squares의 의미는 이미 squares 배열에 있는 기존값들은 보존한다는 것
+                setSquares([...squares, Square()])
               }}
             />
           </View>
@@ -122,7 +123,8 @@ const App = () => {
           <View style={styles.buttonView}>
             <Button title="DELETE SQUARE" 
               onPress={() => {
-
+                // filter 메소드: 조건에 만족하는 요소들의 모임만 배열에 반영
+                setSquares(squares.filter((v, i) => i != squares.length - 1))
               }}
             />
           </View>
@@ -153,11 +155,20 @@ const styles = StyleSheet.create({
   },
 });
 
-//make a color randomly
+//choose a color randomly
 const randomHexColor = () => {
   return '#000000'.replace(/0/g, () => {
     return (~~(Math.random() * 16)).toString(16);
   });
 };
+
+/*
+< const randomHexColor에 대한 설명 >
+
+1) return '기본값'. replace() : replace는 기본값을 replace의 매개변수 값으로 변경하겠다는 의미
+2) /0/g, () => { return ~~ } : 익명함수를 만들어서 '기본값'의 0에 해당하는 값을 익명함수의 return 값으로 바꾸겠다는 의미
+3) ~~(Math.random() * 16) : color의 값은 16진수이기 때문에 random()의 값을 16진수로 변환 & 소수점 버림(~~)
+4) .toString(16) : 나온 color의 값은 현재 16진수이기 때문에 이 값을 문자열로 변환
+*/
 
 export default App;
