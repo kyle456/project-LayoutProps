@@ -11,9 +11,7 @@ function Quiz({ navigation }) {
                 />
             </View>
             <Text style={styles.quizText}>
-                20세기 천재 과학자 알버트 아인슈타인의 
-                "특수상대성이론"은 중력과 가속도는 
-                구별할 수 없다는 등가원리를 통해 도출되었다. {"\n"}
+                20세기 천재 과학자 알버트 아인슈타인의 "특수상대성이론"은 중력과 가속도는 구별할 수 없다는 등가원리를 통해 도출되었다. {"\n"}
                 (맞으면 Yes, 틀리면 No)
             </Text>
             <View style={styles.buttonView}>

@@ -5,6 +5,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Layout from "../screens/layout"
 import Home from "../screens/home"
 import Quiz from "../screens/quiz"
+import Correct from "../screens/correct"
+import Incorrect from "../screens/incorrect"
 
 const Stack = createStackNavigator();
 function MainStackNavigator() {
@@ -25,6 +27,16 @@ function MainStackNavigator() {
                     name="Quiz"
                     component={Quiz}
                     options={{ title: 'quiz Screen' }}
+                />
+                <Stack.Screen
+                    name="Correct"
+                    component={Correct}
+                    options={{ title: 'correct Screen' }}
+                />
+                <Stack.Screen
+                    name="Incorrect"
+                    component={Incorrect}
+                    options={{ title: 'incorrect Screen' }}
                 />
             </Stack.Navigator>
         </NavigationContainer>
