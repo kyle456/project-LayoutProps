@@ -5,8 +5,8 @@ function Home({navigation}) {
     return (
         <>
             <Image 
-                source={require('../assets/sally.png')}
-                style={{ width: '100%', height: '50%' }}
+                source={require('../assets/welcome.jpg')}
+                style={{ width: '100%', height: '50%', resizeMode:'contain' }}
             />
             <Button
                 title="Go to Layout"
