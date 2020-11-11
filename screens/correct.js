@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
         alignItems: 'stretch',
     },
     correctText : {
-        
         fontSize: 20,
         fontWeight: "bold",
         textAlign: 'center',

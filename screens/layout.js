@@ -3,7 +3,8 @@ import { View, StyleSheet, ScrollView, Button, Image, Text } from 'react-native'
 import Constants from 'expo-constants';
 
 
-const Layout = () => {
+const Layout = (props) => {
+    const {navigation} = props;
 
     const flexDirections = ['row', 'row-reverse', 'column', 'column-reverse'];
     const justifyContents = [
@@ -125,6 +126,13 @@ const Layout = () => {
                             onPress={() => {
                                 // filter 메소드: 조건에 만족하는 요소들의 모임만 배열에 반영
                                 setSquares(squares.filter((v, i) => i != squares.length - 1))
+                            }}
+                        />
+                    </View>
+                    <View style={styles.buttonView}>
+                        <Button title="GO TO HOME"
+                            onPress={() => {
+                                navigation.navigate('Home');
                             }}
                         />
                     </View>
