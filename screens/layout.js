@@ -78,6 +78,7 @@ const Layout = (props) => {
                                 changeSetting(flexDirection, flexDirections, setFlexDirection)
                             }}
                         />
+                        <Text style={{textAlign: 'center'}}>{flexDirections[flexDirection]}</Text>
                     </View>
 
                     <View style={styles.buttonView}>
@@ -86,6 +87,7 @@ const Layout = (props) => {
                                 changeSetting(justifyContent, justifyContents, setJustifyContent)
                             }}
                         />
+                        <Text style={{textAlign: 'center'}}>{justifyContents[justifyContent]}</Text>
                     </View>
 
                     <View style={styles.buttonView}>
@@ -94,6 +96,7 @@ const Layout = (props) => {
                                 changeSetting(alignItems, alignItemsArr, setAlignItems)
                             }}
                         />
+                        <Text style={{textAlign: 'center'}}>{alignItemsArr[alignItems]}</Text>
                     </View>
 
                     <View style={styles.buttonView}>
@@ -102,6 +105,7 @@ const Layout = (props) => {
                                 changeSetting(direction, directions, setDirection)
                             }}
                         />
+                        <Text style={{textAlign: 'center'}}>{directions[direction]}</Text>
                     </View>
 
                     <View style={styles.buttonView}>
@@ -110,6 +114,7 @@ const Layout = (props) => {
                                 changeSetting(wrap, wraps, setWrap)
                             }}
                         />
+                        <Text style={{textAlign: 'center'}}>{wraps[wrap]}</Text>
                     </View>
 
                     <View style={styles.buttonView}>
