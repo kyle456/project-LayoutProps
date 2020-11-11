@@ -1,41 +1,49 @@
 import React from 'react';
-import { Text, View, StyleSheet, Button, Image } from 'react-native';
+import { Text, View, StyleSheet, Button, Image, TouchableOpacity } from 'react-native';
 
 function Home({ navigation }) {
     return (
-        <>
-            <View style={styles.imageView}>
-                <Image
-                    source={require('../assets/welcome.jpg')}
-                    style={{ width: '100%', height: '100%', resizeMode: 'contain' }}
-                />
-            </View>
-            <View style={styles.buttonView}>
-                <Button
-                    title="Go to Layout"
-                    color="blue"
-                    onPress={() => navigation.navigate('Layout')}
-                />
-            </View>
-            <View style={styles.buttonView}>
-                <Button
-                    title="Quiz"
-                    color="brown"
-                    onPress={() => navigation.navigate('Quiz')}
-                />
-            </View>
-        </>
+        <View style={styles.container}>
+            <Image
+                source={require('../assets/welcome.jpg')}
+                style={{ width: 400, height: 300 }}
+            />
+            <TouchableOpacity
+                style={styles.buttonContainer}
+                onPress={() => navigation.navigate('Layout')}
+            >
+                <Text style={styles.buttonText}>
+                    Go to Layout
+                </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={styles.buttonContainer}
+                onPress={() => navigation.navigate('Quiz')}
+            >
+                <Text style={styles.buttonText}>
+                    Quiz
+                </Text>
+            </TouchableOpacity>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
-    imageView: {
-        height: '50%',
-        backgroundColor: 'beige'
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'white',
     },
-    buttonView: {
+    buttonContainer: {
+        backgroundColor: 'black',
+        borderRadius: 5,
         padding: 10,
-        alignItems: 'stretch',
+        margin: 20,
+    },
+    buttonText: {
+        fontSize: 20,
+        color: 'white',
     },
 });
 
