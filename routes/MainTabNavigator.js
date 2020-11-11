@@ -5,9 +5,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Layout from "../screens/layout"
 import Home from "../screens/home"
 import Quiz from "../screens/quiz"
+import Correct from "../screens/correct"
+import Incorrect from "../screens/incorrect"
 
 const Nav = createBottomTabNavigator();
-function MainTabNavigator() {
+function MainTabNavigator() { 
     return (
         <NavigationContainer>
             <Nav.Navigator initialRouteName='Home'>
@@ -19,12 +21,22 @@ function MainTabNavigator() {
                 <Nav.Screen
                     name="Layout"
                     component={Layout}
-                    options={{ title: 'layout Screen' }}
+                    options={{ title: 'layout Screen'}}
                 />
                 <Nav.Screen
                     name="Quiz"
                     component={Quiz}
                     options={{ title: 'quiz Screen' }}
+                />
+                <Nav.Screen
+                    name="Correct"
+                    component={Correct}
+                    options={{ title: 'correct Screen', tabBarVisible: false }}
+                />
+                <Nav.Screen
+                    name="Incorrect"
+                    component={Incorrect}
+                    options={{ title: 'incorrect Screen', tabBarVisible: false }}
                 />
             </Nav.Navigator>
         </NavigationContainer>
