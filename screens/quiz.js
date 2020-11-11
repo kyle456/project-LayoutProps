@@ -1,13 +1,13 @@
 import React from 'react';
-import { Text, View, StyleSheet, Button, Image } from 'react-native';
+import { Text, View, StyleSheet, Button, Image, TouchableOpacity } from 'react-native';
 
 function Quiz({ navigation }) {
     return (
-        <>
+        <View style={styles.container}>
             <View style={styles.imageView}>
                 <Image
                     source={require('../assets/einstein.jpg')}
-                    style={{ width: '100%', height: '100%', resizeMode: 'contain' }}
+                    style={{ width: 400, height: 400, resizeMode: 'center' }}
                 />
             </View>
             <Text style={styles.quizText}>
@@ -28,11 +28,16 @@ function Quiz({ navigation }) {
                     onPress={() => navigation.navigate('Correct')}
                 />
             </View>
-        </>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        backgroundColor: 'white',
+    },
     imageView: {
         height: '50%',
         backgroundColor: 'beige'

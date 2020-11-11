@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, Button, Image } from 'react-native';
 
 function Correct({ navigation }) {
     return (
-        <>
+        <View style={styles.container}>
             <View style={styles.imageView}>
                 <Image
                     source={require('../assets/correct.jpg')}
@@ -21,11 +21,16 @@ function Correct({ navigation }) {
                     onPress={() => navigation.navigate('Home')}
                 />
             </View>
-        </>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        backgroundColor: 'white',
+    },
     imageView: {
         height: '50%',
         backgroundColor: 'beige'

@@ -9,7 +9,7 @@ import Correct from "../screens/correct"
 import Incorrect from "../screens/incorrect"
 
 const Nav = createBottomTabNavigator();
-function MainTabNavigator() { 
+function MainTabNavigator() {
     return (
         <NavigationContainer>
             <Nav.Navigator initialRouteName='Home'>
@@ -21,7 +21,7 @@ function MainTabNavigator() {
                 <Nav.Screen
                     name="Layout"
                     component={Layout}
-                    options={{ title: 'layout Screen'}}
+                    options={{ title: 'layout Screen' }}
                 />
                 <Nav.Screen
                     name="Quiz"
