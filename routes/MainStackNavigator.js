@@ -7,6 +7,7 @@ import Home from "../screens/home"
 import Quiz from "../screens/quiz"
 import Correct from "../screens/correct"
 import Incorrect from "../screens/incorrect"
+import Weather from "../screens/weather"
 
 const Nav = createStackNavigator();
 function MainStackNavigator() {
@@ -37,6 +38,11 @@ function MainStackNavigator() {
                     name="Incorrect"
                     component={Incorrect}
                     options={{ title: 'incorrect Screen' }}
+                />
+                <Nav.Screen
+                    name="Weather"
+                    component={Weather}
+                    options={{ title: 'Weather Screen' }}
                 />
             </Nav.Navigator>
         </NavigationContainer>
