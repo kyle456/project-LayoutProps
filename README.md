@@ -22,6 +22,18 @@
 
 <br>
 
+## Open API 🔗
+**Weather API**  
+[OpenWeatherAPI](https://openweathermap.org/api) 사용  
+※ 현재 LayoutProps 디렉토리에 .env 파일이 gitignore 처리 되었기 때문에 별도 생성 필요하다.  
+   .env 파일에는 `REACT_APP_WEATHER_KEY="API key"` 를 작성하고 저장해야한다. API key는 OpenWeatherAPI에서 받아야한다.  
+
+**Map API**  
+[GoogleMapsAPI](https://cloud.google.com/maps-platform/) 사용  
+※ GoogleMapsAPI의 API key는 app.json에 입력되었는데, json 파일에서는 api key를 어떻게 숨기는지 몰라서 처리를 못했다.
+
+<br>
+
 ## 실습 화면 💻
 <div>
 <img width="200" src="https://user-images.githubusercontent.com/71359300/100849849-53db9300-34c6-11eb-8924-27aaf6cbdd72.jpg">  
