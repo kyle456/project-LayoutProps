@@ -1,5 +1,5 @@
 import React from 'react';
-import MapView, {Marker} from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import { Text, Alert, StyleSheet, View, Dimensions } from 'react-native';
 import * as Location from 'expo-location';
 import Axios from 'axios';
@@ -74,8 +74,8 @@ export default class Weather extends React.Component {
         console.log(data.main.temp_min); // 최저 온도
         console.log(data.weather[0].main); // 날씨(맑음, 흐림 ...)
         console.log(data.name);
-        this.setState({ 
-            cond: data.weather[0].main, 
+        this.setState({
+            cond: data.weather[0].main,
             temp: data.main.temp,
             region: {
                 name: data.name,
@@ -84,7 +84,7 @@ export default class Weather extends React.Component {
                 latitudeDelta: 0.03,
                 longitudeDelta: 0.03,
             },
-         });
+        });
     }
 
     componentDidMount() {
@@ -96,17 +96,17 @@ export default class Weather extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.mapContainer}>
-                    <MapView 
+                    <MapView
                         style={styles.mapStyle}
                         initialRegion={region}
                         region={region}
-                        >
+                    >
                         <Marker
                             coordinate={region}
                             title="나의 현재 위치"
                             description={region.name}
                         />
-                    </MapView> 
+                    </MapView>
                 </View>
                 <View style={styles.weatherContainer}>
                     <Text style={styles.tempTitle}>현재 {region.name} 날씨</Text>
@@ -139,5 +139,5 @@ const styles = StyleSheet.create({
     mapStyle: {
         width: 400,
         height: 400,
-      },
+    },
 })
