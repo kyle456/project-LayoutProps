@@ -16,7 +16,25 @@ const weatherOptions = {
     },
     Thunderstorm: {
         iconName: "weather-lightning"
-    }
+    },
+    Drizzle: {
+        iconName: "weather-rainy"
+    },
+    Rain: {
+        iconName: "weather-pouring"
+    },
+    Snow: {
+        iconName: "weather-snowy"
+    },
+    Fog: {
+        iconName: "weather-fog"
+    },
+    Haze: {
+        iconName: "weather-hazy"
+    },
+    Tornado: {
+        iconName: "weather-tornado"
+    },
 }
 
 export default class Weather extends React.Component {
